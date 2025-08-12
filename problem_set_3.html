@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problem Set 3</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 2rem; }
+  h1 { margin-top: 0; }
+  .note { color: #555; font-size: 0.95rem; }
+  .problem { margin: 1rem 0; padding: 1rem; border: 1px solid #eee; border-radius: 8px; }
+  .label { font-weight: 600; color: #333; }
+  code, pre { background: #f6f8fa; padding: 0.2rem 0.4rem; border-radius: 4px; }
+  ol { padding-left: 1.2rem; }
+</style>
+</head>
+<body>
+  <h1>Problem Set 3 (5 questions — includes one coding problem)</h1>
+  <p class="note">No problems are reused from Sets 1 or 2. Topics touched: bias–variance, regularization, gradient descent (1D), hash tables & sorting, recursion (coding).</p>
+
+  <div class="problem">
+    <div class="label">1) Bias–Variance via Learning Curves</div>
+    <p>You plot learning curves (train error and validation error versus training set size):</p>
+    <ul>
+      <li>Both curves are high and close together, and <em>decrease slowly</em> as you add more data.</li>
+    </ul>
+    <p>(a) Is this primarily high bias or high variance?<br>(b) Name two concrete actions to improve performance given this diagnosis.</p>
+    <p><em>Expected answer type:</em> Short conceptual explanation.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">2) Regularization under Multicollinearity</div>
+    <p>You have many features that are highly correlated with each other (strong multicollinearity). You care about keeping groups of correlated features rather than picking only one.</p>
+    <p>(a) Which penalty would you prefer: Ridge, Lasso, or Elastic Net? Briefly justify.<br>(b) What qualitative effect does Lasso often have when predictors are strongly correlated?</p>
+    <p><em>Expected answer type:</em> Short conceptual explanation.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">3) Gradient Descent on a 1D Quadratic</div>
+    <p>Consider <code>f(x) = (x - 5)^2</code>. Start from <code>x₀ = 0</code> and use gradient descent with constant learning rate <code>η = 0.2</code>.</p>
+    <ol>
+      <li>(a) Write the update rule for <code>xₖ</code> in terms of <code>xₖ</code> (no calculus beyond taking the derivative). </li>
+      <li>(b) Derive a closed-form expression for <code>xₖ</code> as a function of <code>k</code>.</li>
+      <li>(c) Compute <code>x₁</code>, <code>x₂</code>, and <code>x₃</code>.</li>
+    </ol>
+    <p><em>Expected answer type:</em> Short derivations and numeric values.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">4) Hash Tables & Sorting – Concepts</div>
+    <p>(a) In a hash table with separate chaining and a uniform hash function, what is the expected-time complexity of a lookup in terms of the load factor <code>α = n/m</code>? Also state the worst-case complexity.</p>
+    <p>(b) Among the following sorting algorithms you know — bubble, selection, insertion, shell, merge, quick — name <em>one</em> that is <strong>stable</strong> and <em>one</em> that is <strong>not stable</strong>.</p>
+    <p><em>Expected answer type:</em> Big-O statements and brief identifications.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">5) Recursion — Coding Problem</div>
+    <p>Write a recursive Python function <code>is_palindrome(s)</code> that returns <code>True</code> if a string <code>s</code> is a palindrome and <code>False</code> otherwise, ignoring case and non-alphanumeric characters.</p>
+    <pre><code># Examples
+is_palindrome("Racecar")          # True
+is_palindrome("A man, a plan, a canal: Panama!")  # True
+is_palindrome("hello")            # False</code></pre>
+    <p><em>Expected answer type:</em> Python function definition written by you.</p>
+  </div>
+
+</body>
+</html>

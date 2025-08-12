@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problem Set 2</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 2rem; }
+  h1, h2 { margin-top: 0; }
+  .note { color: #555; font-size: 0.95rem; }
+  .problem { margin: 1rem 0; padding: 1rem; border: 1px solid #eee; border-radius: 8px; }
+  .label { font-weight: 600; color: #333; }
+  code, pre { background: #f6f8fa; padding: 0.2rem 0.4rem; border-radius: 4px; }
+  ol { padding-left: 1.2rem; }
+</style>
+</head>
+<body>
+  <h1>Problem Set 2 (5 questions—includes one coding problem)</h1>
+  <p class="note">Topics covered: Bias–Variance tradeoff, Elastic Net, Sequential vs. Binary Search, Recursion (coding), Combinations & Permutations.</p>
+
+  <div class="problem">
+    <div class="label">1) Bias–Variance Tradeoff – Practical</div>
+    <p>You test two models:</p>
+    <ul>
+      <li>Model A: Train error = 5%, Test error = 20%</li>
+      <li>Model B: Train error = 15%, Test error = 17%</li>
+    </ul>
+    <p>Which model appears to have <strong>higher variance</strong>? Which has <strong>higher bias</strong>? Briefly explain.</p>
+    <p><em>Expected answer type:</em> Short conceptual explanation.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">2) Elastic Net – Parameter Effects</div>
+    <p>Elastic Net uses both L1 and L2 penalties. If you set the mixing parameter <code>α</code> close to 1, which penalty dominates? What effect would you expect on feature selection?</p>
+    <p><em>Expected answer type:</em> Short conceptual explanation.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">3) Search Algorithm Identification</div>
+    <blockquote>Start at the first element in the list, check each element one by one until the target is found or the list ends.</blockquote>
+    <p>Name the search algorithm and give its <strong>worst-case</strong> time complexity in Big O notation.</p>
+    <p><em>Expected answer type:</em> One-line identification + complexity.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">4) Recursion – Coding Problem</div>
+    <p>Write a recursive Python function <code>sum_digits(n)</code> that takes a <strong>positive integer</strong> <code>n</code> and returns the sum of its digits.</p>
+    <pre><code># Example
+sum_digits(1234)  # returns 10</code></pre>
+    <p><em>Expected answer type:</em> Python function definition written by you.</p>
+  </div>
+
+  <div class="problem">
+    <div class="label">5) Combinations and Permutations</div>
+    <p>A committee of 3 people will be formed from a group of 8 candidates.</p>
+    <ol>
+      <li>(a) How many <strong>different committees</strong> can be formed?</li>
+      <li>(b) How many <strong>different ways</strong> could the same 3 people be chosen if <strong>order matters</strong>?</li>
+    </ol>
+    <p><em>Expected answer type:</em> Numeric answers with formulas (combinations and permutations).</p>
+  </div>
+
+</body>
+</html>

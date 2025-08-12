@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problem Set 1 — Answer Key</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 2rem; }
+  h1 { margin-top: 0; }
+  .answer { margin: 1rem 0; padding: 1rem; border: 1px solid #eee; border-radius: 8px; background: #fcfcfd; }
+  code, pre { background: #f6f8fa; padding: 0.2rem 0.4rem; border-radius: 4px; }
+  ol { padding-left: 1.2rem; }
+</style>
+</head>
+<body>
+  <h1>Problem Set 1 — Answer Key</h1>
+
+  <div class="answer">
+    <h3>1) Bias–Variance Tradeoff (Conceptual)</h3>
+    <p><strong>(a)</strong> High <em>variance</em> (overfitting): excellent train performance but poor test performance.</p>
+    <p><strong>(b)</strong> Ways to shift toward lower variance / higher bias include: increase regularization (e.g., L2/L1); reduce model complexity (simpler hypothesis class, fewer features); use early stopping; gather more training data; add noise/augmentation; cross-validate hyperparameters.</p>
+  </div>
+
+  <div class="answer">
+    <h3>2) Ridge vs. Lasso (Conceptual)</h3>
+    <p>Ridge uses an L2 penalty: <code>λ ∑ β<sub>j</sub>²</code>. Lasso uses an L1 penalty: <code>λ ∑ |β<sub>j</sub>|</code>.</p>
+    <p><em>When prefer Lasso:</em> when you expect sparsity / many irrelevant features so that automatic feature selection (driving some coefficients exactly to zero) is useful.</p>
+  </div>
+
+  <div class="answer">
+    <h3>3) Gradient Descent – Step Size Choice</h3>
+    <p>Large learning rate &rarr; steps overshoot minima and can oscillate/diverge. Very small rate &rarr; progress is extremely slow.</p>
+    <p><strong>Practical strategies:</strong> scale/standardize features; do a coarse-to-fine grid search on the learning rate using a validation set; use a learning-rate schedule (e.g., decay); check monotone decrease of loss and back off when it increases.</p>
+  </div>
+
+  <div class="answer">
+    <h3>4) Sorting – Merge Sort Analysis</h3>
+    <p><strong>(a)</strong> Time: <code>O(n log n)</code>. (Space: <code>O(n)</code> auxiliary.)</p>
+    <p><strong>(b)</strong> Divide the array in half recursively (≈ <code>log n</code> levels); each level merges disjoint sublists in total <code>O(n)</code> time; sum across levels &rarr; <code>O(n log n)</code>.</p>
+  </div>
+
+  <div class="answer">
+    <h3>5) Big O – Function Comparison</h3>
+    <p>Slowest &rarr; fastest: <code>log n</code> &lt; <code>n</code> &lt; <code>n log n</code> &lt; <code>n²</code> &lt; <code>2ⁿ</code>.</p>
+  </div>
+
+  <div class="answer">
+    <h3>6) Probability – Conditional Probability</h3>
+    <p>Without replacement: <code>P(R₁ ∧ R₂) = (3/5)·(2/4) = 6/20 = 3/10 = 0.3</code>.</p>
+  </div>
+
+</body>
+</html>

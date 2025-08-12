@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problem Set 3 — Answer Key</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 2rem; }
+  h1 { margin-top: 0; }
+  .answer { margin: 1rem 0; padding: 1rem; border: 1px solid #eee; border-radius: 8px; background: #fcfcfd; }
+  code, pre { background: #f6f8fa; padding: 0.2rem 0.4rem; border-radius: 4px; }
+  ol { padding-left: 1.2rem; }
+</style>
+</head>
+<body>
+  <h1>Problem Set 3 — Answer Key</h1>
+
+  <div class="answer">
+    <h3>1) Bias–Variance via Learning Curves</h3>
+    <p>(a) <strong>High bias</strong> (underfitting). Both train and validation errors are high and close; adding more data helps only slightly.</p>
+    <p>(b) Increase model capacity/complexity; add informative features; reduce regularization strength; use non-linear features; ensure adequate training time.</p>
+  </div>
+
+  <div class="answer">
+    <h3>2) Regularization under Multicollinearity</h3>
+    <p>(a) Prefer <strong>Ridge</strong> when you want to keep correlated groups (it shrinks coefficients together) or <strong>Elastic Net</strong> to combine Ridge's grouping with some L1 sparsity. Either is acceptable with justification; Elastic Net is often best of both.</p>
+    <p>(b) <strong>Lasso</strong> tends to pick one predictor from a correlated group and drive others to zero (instability among correlated features).</p>
+  </div>
+
+  <div class="answer">
+    <h3>3) Gradient Descent on a 1D Quadratic</h3>
+    <p>Derivative: <code>f'(x) = 2(x - 5)</code>. Update: <code>x_{k+1} = x_k - η · 2(x_k - 5)</code>.</p>
+    <p>With <code>η = 0.2</code>: <code>x_{k+1} = (1 - 0.4) x_k + 2 = 0.6 x_k + 2</code>.</p>
+    <p>Closed form (fixed-point at 5): <code>x_k = 5 - 5 · (0.6)^k</code>.</p>
+    <p>Values: <code>x_1 = 2</code>, <code>x_2 = 3.2</code>, <code>x_3 = 3.92</code>.</p>
+  </div>
+
+  <div class="answer">
+    <h3>4) Hash Tables & Sorting – Concepts</h3>
+    <p>(a) Expected lookup time with separate chaining: <code>Θ(1 + α)</code> (often treated as amortized constant when <code>α</code> is bounded). Worst case: <code>O(n)</code> if all keys collide into one bucket.</p>
+    <p>(b) Stable examples: <strong>merge sort</strong>, <strong>insertion sort</strong>, <strong>bubble sort</strong>. Not stable: <strong>quick sort</strong>, <strong>selection sort</strong>, <strong>shell sort</strong>.</p>
+  </div>
+
+  <div class="answer">
+    <h3>5) Recursion — Coding Problem</h3>
+    <p>One possible solution:</p>
+    <pre><code>import string
+
+def is_palindrome(s: str) -> bool:
+    # filter to alphanumeric and lowercase
+    filtered = [ch.lower() for ch in s if ch.isalnum()]
+    def helper(i: int, j: int) -> bool:
+        if i >= j:
+            return True
+        if filtered[i] != filtered[j]:
+            return False
+        return helper(i + 1, j - 1)
+    return helper(0, len(filtered) - 1)
+</code></pre>
+    <p>Base case: crossed indices (empty or single char) &rarr; True. Recursive step: compare ends and recurse inward.</p>
+  </div>
+
+</body>
+</html>
