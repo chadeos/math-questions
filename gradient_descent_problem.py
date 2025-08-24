@@ -19,7 +19,9 @@ b_history = [b]
 loss_history = []
 
 for epoch in range(epochs):
-    # TO DO: Compute error vector
+    # Compute error vector
+    y_pred = w * X + b
+    error = y - y_pred
     
     # TO DO: Compute loss (MSE)
 
