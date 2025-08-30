@@ -1,60 +1,72 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Example data
-X = np.array([1, 2, 3, 4], dtype=float)
-y = np.array([3, 5, 7, 9], dtype=float)
+# ----- Hard-coded quadratic data (with noise) -----
+# True function: y = 2x^2 - 3x + 1
+X = np.array([-2, -1, 0, 1, 2], dtype=float)
+y = np.array([15.,  6.,  1.,  0.,  3.], dtype=float)
 
-# Parameters initialized from standard normal (no seed)
-w = np.random.randn()
-b = np.random.randn()
-alpha = 0.01  # Learning rate
-epochs = 1000
+# ----- Parameters for quadratic model -----
+# y_hat = a2*x^2 + a1*x + a0
+a2 = np.random.randn()
+a1 = np.random.randn()
+a0 = np.random.randn()
 
+alpha = 0.01
+epochs = 2000
 n = len(X)
 
-# Store values for plotting
-w_history = [w]
-b_history = [b]
 loss_history = []
+a2_hist, a1_hist, a0_hist = [a2], [a1], [a0]
 
 for epoch in range(epochs):
-    # Compute error vector
-    y_pred = w * X + b
-    error = y - y_pred
-    
-    # TO DO: Compute loss (MSE)
+    # Calculate error
+    # ...
 
+    # Calculate Mean Squared Error
+    # ...
+    
     loss_history.append(loss)
-    
-    # TO DO: Compute gradients
-    
-    # TO DO: Update parameters
-    
+
+    # Calculate gradient
+    # ...
+
+    # Update parameters
+    # ...
+
     # Store history
-    w_history.append(w)
-    b_history.append(b)
+    a2_hist.append(a2); a1_hist.append(a1); a0_hist.append(a0)
 
-# Plot parameter evolution
-plt.figure(figsize=(12,5))
+# ----- Plots -----
+plt.figure(figsize=(14,5))
 
-plt.subplot(1,2,1)
-plt.plot(w_history, label="w")
-plt.plot(b_history, label="b")
-plt.xlabel("Epoch")
-plt.ylabel("Parameter Value")
-plt.title("Evolution of Parameters")
+# Parameter evolution
+plt.subplot(1,3,1)
+plt.plot(a2_hist, label="a2")
+plt.plot(a1_hist, label="a1")
+plt.plot(a0_hist, label="a0")
+plt.xlabel("Epoch"); plt.ylabel("Value")
+plt.title("Parameter Evolution")
 plt.legend()
 
-# Plot loss curve
-plt.subplot(1,2,2)
+# Loss curve
+plt.subplot(1,3,2)
 plt.plot(loss_history)
-plt.xlabel("Epoch")
-plt.ylabel("Loss (MSE)")
+plt.xlabel("Epoch"); plt.ylabel("Loss")
 plt.title("Loss Curve")
+
+# Fit vs data
+plt.subplot(1,3,3)
+xx = np.linspace(X.min()-0.5, X.max()+0.5, 200)
+yy = a2*xx**2 + a1*xx + a0
+plt.scatter(X, y, s=40, label="Data")
+plt.plot(xx, yy, 'r-', label="Fit")
+plt.xlabel("x"); plt.ylabel("y")
+plt.title("Quadratic Fit")
+plt.legend()
 
 plt.tight_layout()
 plt.show()
 
-# Print final values
-print(f"Final w: {w:.6f}, Final b: {b:.6f}, Final loss: {loss_history[-1]:.6f}")
+print(f"Learned coefficients: a2={a2:.3f}, a1={a1:.3f}, a0={a0:.3f}")
+print(f"Final loss: {loss_history[-1]:.6f}")
